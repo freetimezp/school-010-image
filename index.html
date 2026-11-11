@@ -1,18 +1,1014 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <title>Project</title>
-</head>
+        <meta
+            name="description"
+            content="Learn HTML images, object-fit, object-position and CSS aspect ratios with interactive examples."
+        />
 
-<body>
-    start
+        <meta name="theme-color" content="#f1e8d9" />
 
-    <script src="./assets/js/main.js"></script>
-</body>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+            rel="stylesheet"
+        />
+
+        <link rel="stylesheet" href="./assets/css/style.css" />
+
+        <title>010 — Image / Fit | Frontend Fundamentals</title>
+    </head>
+
+    <body>
+        <!-- =========================================
+             HEADER
+        ========================================== -->
+
+        <header class="topbar">
+            <a href="#top" class="brand">
+                <span class="brand-icon">S.</span>
+
+                <span class="brand-text">
+                    <strong>STUDIO</strong>
+                    <small>FRONTEND SCHOOL</small>
+                </span>
+            </a>
+
+            <div class="topbar-center">
+                <span class="course-label">FRONTEND FUNDAMENTALS</span>
+                <span class="course-divider"></span>
+                <span class="lesson-number">LESSON 010</span>
+            </div>
+
+            <a
+                href="https://freetimezp.github.io/roadmap-web-coding/"
+                class="roadmap-link"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span>All lessons</span>
+                <span aria-hidden="true">↗</span>
+            </a>
+        </header>
+
+        <!-- =========================================
+             MAIN
+        ========================================== -->
+
+        <main id="top">
+            <!-- HERO -->
+
+            <section class="hero section-wrap">
+                <div class="hero-content">
+                    <div class="eyebrow">
+                        <span class="eyebrow-dot"></span>
+                        HTML & CSS / VISUAL ELEMENTS
+                    </div>
+
+                    <h1>
+                        Image
+                        <span class="hero-slash">/</span>
+                        <em>Fit.</em>
+                    </h1>
+
+                    <p class="hero-description">
+                        Images are more than just pictures. Learn how to
+                        display, resize and crop them beautifully with HTML and
+                        CSS.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="#lesson-start" class="primary-button">
+                            Start learning
+                            <span aria-hidden="true">↓</span>
+                        </a>
+
+                        <span class="reading-time">
+                            <span>◷</span>
+                            12 MIN READ
+                        </span>
+                    </div>
+
+                    <div class="hero-meta">
+                        <span>01 — HTML IMAGE</span>
+                        <span>02 — OBJECT FIT</span>
+                        <span>03 — ASPECT RATIO</span>
+                    </div>
+                </div>
+
+                <!-- HERO IMAGE COMPOSITION -->
+
+                <div class="hero-visual">
+                    <div class="hero-image-main">
+                        <img
+                            src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1000&q=85"
+                            alt="Sunlight illuminating a peaceful landscape"
+                        />
+
+                        <span class="image-index">FIG. 010 — 01</span>
+                    </div>
+
+                    <div class="hero-image-small">
+                        <img
+                            src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=500&q=85"
+                            alt="Soft pink flowers in natural light"
+                        />
+                    </div>
+
+                    <div class="hero-note">
+                        <span class="note-line"></span>
+                        <span>Every image has a frame.</span>
+                    </div>
+
+                    <div class="hero-stamp">
+                        <span>IMG</span>
+                        <strong>010</strong>
+                    </div>
+                </div>
+            </section>
+
+            <!-- LESSON NAVIGATION -->
+
+            <nav class="lesson-nav" aria-label="Lesson sections">
+                <div class="section-wrap lesson-nav-inner">
+                    <a href="#lesson-start" class="lesson-nav-link active">
+                        <span>01</span>
+                        Introduction
+                    </a>
+
+                    <a href="#html-image" class="lesson-nav-link">
+                        <span>02</span>
+                        HTML Image
+                    </a>
+
+                    <a href="#responsive" class="lesson-nav-link">
+                        <span>03</span>
+                        Responsive
+                    </a>
+
+                    <a href="#object-fit" class="lesson-nav-link">
+                        <span>04</span>
+                        Object Fit
+                    </a>
+
+                    <a href="#aspect-ratio" class="lesson-nav-link">
+                        <span>05</span>
+                        Aspect Ratio
+                    </a>
+
+                    <a href="#practice" class="lesson-nav-link">
+                        <span>06</span>
+                        Practice
+                    </a>
+                </div>
+            </nav>
+
+            <!-- =========================================
+                 INTRODUCTION
+            ========================================== -->
+
+            <section id="lesson-start" class="lesson-section section-wrap">
+                <div class="section-heading">
+                    <div class="section-kicker">
+                        <span>01</span>
+                        <span>THE BIG PICTURE</span>
+                    </div>
+
+                    <h2>
+                        One image.
+                        <em>Many possibilities.</em>
+                    </h2>
+
+                    <p>
+                        The same photograph can look completely different
+                        depending on its container, dimensions and fitting
+                        rules.
+                    </p>
+                </div>
+
+                <div class="intro-grid">
+                    <div class="intro-copy">
+                        <span class="small-label">WHY DOES IT MATTER?</span>
+
+                        <p>
+                            Think about an online store, a portfolio or a photo
+                            gallery. Images need to fit different spaces without
+                            looking stretched, distorted or unexpectedly
+                            cropped.
+                        </p>
+
+                        <p>
+                            HTML gives us the image element. CSS gives us
+                            control over how that image behaves.
+                        </p>
+
+                        <div class="learning-note">
+                            <span class="learning-note-icon">✳</span>
+
+                            <div>
+                                <strong>Our goal</strong>
+                                <p>
+                                    Display images that look natural, stay
+                                    responsive and fit their intended layouts.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="intro-comparison">
+                        <div class="comparison-card comparison-bad">
+                            <span class="comparison-label">
+                                WITHOUT CONTROL
+                            </span>
+
+                            <div class="comparison-image">
+                                <img
+                                    src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600&q=85"
+                                    alt="Landscape shown with distorted proportions"
+                                />
+                            </div>
+
+                            <span class="comparison-caption">
+                                Stretched image
+                            </span>
+                        </div>
+
+                        <div class="comparison-card comparison-good">
+                            <span class="comparison-label">WITH CSS</span>
+
+                            <div class="comparison-image">
+                                <img
+                                    src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=600&q=85"
+                                    alt="Landscape displayed with preserved proportions"
+                                />
+                            </div>
+
+                            <span class="comparison-caption">
+                                Natural proportions
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =========================================
+                 02. HTML IMAGE ELEMENT
+            ========================================== -->
+
+            <section id="html-image" class="lesson-section section-wrap">
+                <div class="section-heading">
+                    <div class="section-kicker">
+                        <span>02</span>
+                        <span>HTML FUNDAMENTALS</span>
+                    </div>
+
+                    <h2>
+                        Meet the
+                        <em>img element.</em>
+                    </h2>
+
+                    <p>
+                        The HTML img element embeds an image into your page. It
+                        uses attributes to define its source and alternative
+                        text.
+                    </p>
+                </div>
+
+                <div class="concept-grid">
+                    <div class="concept-visual">
+                        <div class="concept-image-frame">
+                            <img
+                                src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=800&q=85"
+                                alt="Pink flowers with soft natural lighting"
+                            />
+
+                            <span class="frame-corner frame-corner-tl"></span>
+                            <span class="frame-corner frame-corner-br"></span>
+                        </div>
+
+                        <span class="image-caption">
+                            NATURAL LIGHT / STUDY 001
+                        </span>
+                    </div>
+
+                    <div class="concept-copy">
+                        <span class="small-label">THE BASIC SYNTAX</span>
+
+                        <h3>Start with an image source.</h3>
+
+                        <p>
+                            The src attribute tells the browser where to find
+                            the image. The alt attribute provides alternative
+                            text describing its content or purpose.
+                        </p>
+
+                        <pre class="code-block"><code>&lt;img
+    src="flower.jpg"
+    alt="Pink flowers"
+/&gt;</code></pre>
+
+                        <div class="attribute-list">
+                            <div class="attribute-item">
+                                <code>src</code>
+
+                                <div>
+                                    <strong>Image source</strong>
+                                    <p>The path or URL of the image.</p>
+                                </div>
+                            </div>
+
+                            <div class="attribute-item">
+                                <code>alt</code>
+
+                                <div>
+                                    <strong>Alternative text</strong>
+                                    <p>Describes the image when needed.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-strip">
+                    <span class="info-icon">i</span>
+
+                    <p>
+                        <strong>Remember:</strong>
+                        img is a void element. It does not need a closing tag.
+                        Always consider what useful alternative text a
+                        non-decorative image should have.
+                    </p>
+                </div>
+            </section>
+
+            <!-- =========================================
+                 03. RESPONSIVE IMAGES
+            ========================================== -->
+
+            <section id="responsive" class="lesson-section section-wrap">
+                <div class="section-heading">
+                    <div class="section-kicker">
+                        <span>03</span>
+                        <span>RESPONSIVE IMAGES</span>
+                    </div>
+
+                    <h2>
+                        Let images
+                        <em>breathe.</em>
+                    </h2>
+
+                    <p>
+                        A responsive image should adapt to its available space
+                        without losing its original proportions.
+                    </p>
+                </div>
+
+                <div class="responsive-layout">
+                    <div class="responsive-copy">
+                        <span class="small-label">A SIMPLE CSS RULE</span>
+
+                        <h3>Keep images inside their containers.</h3>
+
+                        <p>
+                            An image can be wider than the screen or its parent.
+                            max-width: 100% prevents it from overflowing.
+                        </p>
+
+                        <pre class="code-block"><code>img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}</code></pre>
+
+                        <ul class="check-list">
+                            <li>Image cannot exceed its parent's width.</li>
+                            <li>Original proportions are preserved.</li>
+                            <li>Works naturally across screen sizes.</li>
+                        </ul>
+                    </div>
+
+                    <div class="responsive-demo">
+                        <div class="demo-window">
+                            <div class="demo-window-top">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <small>RESPONSIVE PREVIEW</small>
+                            </div>
+
+                            <div class="demo-window-content">
+                                <div class="responsive-photo">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=900&q=85"
+                                        alt="Golden sunlight over a green landscape"
+                                    />
+                                </div>
+
+                                <span>Beautiful images. Flexible layouts.</span>
+                            </div>
+                        </div>
+
+                        <span class="demo-caption">
+                            MAX-WIDTH: 100% / HEIGHT: AUTO
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =========================================
+                 04. OBJECT FIT PLAYGROUND
+            ========================================== -->
+
+            <section id="object-fit" class="playground-section">
+                <div class="section-wrap">
+                    <div class="section-heading playground-heading">
+                        <div class="section-kicker">
+                            <span>04</span>
+                            <span>INTERACTIVE PLAYGROUND</span>
+                        </div>
+
+                        <h2>
+                            Find the perfect
+                            <em>fit.</em>
+                        </h2>
+
+                        <p>
+                            Change the CSS object-fit property and see how the
+                            same image behaves inside a fixed frame.
+                        </p>
+                    </div>
+
+                    <div class="playground">
+                        <!-- CONTROLS -->
+
+                        <div class="playground-controls">
+                            <div class="control-heading">
+                                <span class="small-label"> 01 / IMAGE </span>
+                                <span class="live-indicator">LIVE</span>
+                            </div>
+
+                            <h3>Object fit</h3>
+
+                            <p>
+                                Choose how the image should fit its container.
+                            </p>
+
+                            <div
+                                class="fit-options"
+                                role="group"
+                                aria-label="Choose object fit"
+                            >
+                                <button
+                                    class="fit-option active"
+                                    type="button"
+                                    data-fit="cover"
+                                    aria-pressed="true"
+                                >
+                                    <span class="fit-option-name">cover</span>
+                                    <span class="fit-option-description">
+                                        Fill the frame
+                                    </span>
+                                    <span class="fit-option-arrow">↗</span>
+                                </button>
+
+                                <button
+                                    class="fit-option"
+                                    type="button"
+                                    data-fit="contain"
+                                    aria-pressed="false"
+                                >
+                                    <span class="fit-option-name">contain</span>
+                                    <span class="fit-option-description">
+                                        Show the whole image
+                                    </span>
+                                    <span class="fit-option-arrow">↗</span>
+                                </button>
+
+                                <button
+                                    class="fit-option"
+                                    type="button"
+                                    data-fit="fill"
+                                    aria-pressed="false"
+                                >
+                                    <span class="fit-option-name">fill</span>
+                                    <span class="fit-option-description">
+                                        Stretch to fit
+                                    </span>
+                                    <span class="fit-option-arrow">↗</span>
+                                </button>
+
+                                <button
+                                    class="fit-option"
+                                    type="button"
+                                    data-fit="none"
+                                    aria-pressed="false"
+                                >
+                                    <span class="fit-option-name">none</span>
+                                    <span class="fit-option-description">
+                                        Keep natural size
+                                    </span>
+                                    <span class="fit-option-arrow">↗</span>
+                                </button>
+
+                                <button
+                                    class="fit-option"
+                                    type="button"
+                                    data-fit="scale-down"
+                                    aria-pressed="false"
+                                >
+                                    <span class="fit-option-name">
+                                        scale-down
+                                    </span>
+                                    <span class="fit-option-description">
+                                        Use the smaller size
+                                    </span>
+                                    <span class="fit-option-arrow">↗</span>
+                                </button>
+                            </div>
+
+                            <div class="control-divider"></div>
+
+                            <span class="small-label">02 / IMAGE POSITION</span>
+
+                            <h3>Object position</h3>
+
+                            <div class="position-control">
+                                <label for="positionX">
+                                    Horizontal
+                                    <output id="positionXValue">50%</output>
+                                </label>
+
+                                <input
+                                    type="range"
+                                    id="positionX"
+                                    min="0"
+                                    max="100"
+                                    value="50"
+                                />
+
+                                <label for="positionY">
+                                    Vertical
+                                    <output id="positionYValue">50%</output>
+                                </label>
+
+                                <input
+                                    type="range"
+                                    id="positionY"
+                                    min="0"
+                                    max="100"
+                                    value="50"
+                                />
+                            </div>
+
+                            <button
+                                class="reset-button"
+                                id="resetFit"
+                                type="button"
+                            >
+                                ↺ Reset playground
+                            </button>
+                        </div>
+
+                        <!-- IMAGE PREVIEW -->
+
+                        <div class="playground-preview">
+                            <div class="preview-topbar">
+                                <span>IMAGE PREVIEW</span>
+                                <span id="previewStatus">
+                                    OBJECT-FIT: COVER
+                                </span>
+                            </div>
+
+                            <div class="preview-stage">
+                                <div class="preview-frame" id="previewFrame">
+                                    <img
+                                        id="previewImage"
+                                        src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1000&q=85"
+                                        alt="Golden landscape with mountains and a glowing sky"
+                                    />
+
+                                    <span class="frame-label">FRAME</span>
+                                </div>
+                            </div>
+
+                            <div class="preview-footer">
+                                <div>
+                                    <span class="preview-footer-label">
+                                        CURRENT VALUE
+                                    </span>
+                                    <strong id="currentFit">
+                                        object-fit: cover;
+                                    </strong>
+                                </div>
+
+                                <span class="preview-size">300 × 220 PX</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- OBJECT FIT QUICK COMPARISON -->
+
+                    <div class="fit-gallery">
+                        <div class="fit-gallery-heading">
+                            <span class="small-label">VISUAL REFERENCE</span>
+                            <span>Same image / different behavior</span>
+                        </div>
+
+                        <div class="fit-gallery-grid">
+                            <article class="fit-gallery-card">
+                                <div class="fit-gallery-image fit-cover">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=500&q=85"
+                                        alt=""
+                                    />
+                                </div>
+
+                                <strong>cover</strong>
+                                <p>Fills the box, cropping if needed.</p>
+                            </article>
+
+                            <article class="fit-gallery-card">
+                                <div class="fit-gallery-image fit-contain">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=500&q=85"
+                                        alt=""
+                                    />
+                                </div>
+
+                                <strong>contain</strong>
+                                <p>Shows the complete image.</p>
+                            </article>
+
+                            <article class="fit-gallery-card">
+                                <div class="fit-gallery-image fit-fill">
+                                    <img
+                                        src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=500&q=85"
+                                        alt=""
+                                    />
+                                </div>
+
+                                <strong>fill</strong>
+                                <p>Fills the box, possibly distorting.</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =========================================
+                 05. ASPECT RATIO
+            ========================================== -->
+
+            <section id="aspect-ratio" class="lesson-section section-wrap">
+                <div class="section-heading">
+                    <div class="section-kicker">
+                        <span>05</span>
+                        <span>IMAGE DIMENSIONS</span>
+                    </div>
+
+                    <h2>
+                        Shape the
+                        <em>frame.</em>
+                    </h2>
+
+                    <p>
+                        Aspect ratio describes the proportional relationship
+                        between an element's width and height.
+                    </p>
+                </div>
+
+                <div class="ratio-intro">
+                    <div>
+                        <span class="small-label">WHAT IS ASPECT RATIO?</span>
+
+                        <p>
+                            A 16:9 frame is wider than it is tall. A 1:1 frame
+                            is a square. A 3:4 frame is taller than it is wide.
+                        </p>
+                    </div>
+
+                    <div class="ratio-equation">
+                        <span>WIDTH</span>
+                        <strong>÷</strong>
+                        <span>HEIGHT</span>
+                    </div>
+                </div>
+
+                <!-- ASPECT RATIO PLAYGROUND -->
+
+                <div class="ratio-playground">
+                    <div class="ratio-controls">
+                        <span class="small-label">SELECT A FORMAT</span>
+
+                        <div
+                            class="ratio-options"
+                            role="group"
+                            aria-label="Choose aspect ratio"
+                        >
+                            <button
+                                class="ratio-option active"
+                                type="button"
+                                data-ratio="1 / 1"
+                                data-ratio-label="1:1"
+                                aria-pressed="true"
+                            >
+                                <span class="ratio-shape square"></span>
+                                <strong>1:1</strong>
+                                <small>Square</small>
+                            </button>
+
+                            <button
+                                class="ratio-option"
+                                type="button"
+                                data-ratio="4 / 3"
+                                data-ratio-label="4:3"
+                                aria-pressed="false"
+                            >
+                                <span
+                                    class="ratio-shape landscape-small"
+                                ></span>
+                                <strong>4:3</strong>
+                                <small>Classic</small>
+                            </button>
+
+                            <button
+                                class="ratio-option"
+                                type="button"
+                                data-ratio="16 / 9"
+                                data-ratio-label="16:9"
+                                aria-pressed="false"
+                            >
+                                <span class="ratio-shape landscape-wide"></span>
+                                <strong>16:9</strong>
+                                <small>Video</small>
+                            </button>
+
+                            <button
+                                class="ratio-option"
+                                type="button"
+                                data-ratio="3 / 4"
+                                data-ratio-label="3:4"
+                                aria-pressed="false"
+                            >
+                                <span class="ratio-shape portrait"></span>
+                                <strong>3:4</strong>
+                                <small>Portrait</small>
+                            </button>
+
+                            <button
+                                class="ratio-option"
+                                type="button"
+                                data-ratio="9 / 16"
+                                data-ratio-label="9:16"
+                                aria-pressed="false"
+                            >
+                                <span class="ratio-shape portrait-tall"></span>
+                                <strong>9:16</strong>
+                                <small>Stories</small>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="ratio-preview-area">
+                        <div
+                            class="ratio-preview-frame"
+                            id="ratioFrame"
+                            style="aspect-ratio: 1 / 1"
+                        >
+                            <img
+                                id="ratioImage"
+                                src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=900&q=85"
+                                alt="Flowers in a natural garden"
+                            />
+                        </div>
+
+                        <div class="ratio-preview-info">
+                            <div>
+                                <span class="small-label">SELECTED FORMAT</span>
+                                <strong id="ratioValue">1:1</strong>
+                            </div>
+
+                            <div>
+                                <span class="small-label">CSS PROPERTY</span>
+                                <code id="ratioCode">aspect-ratio: 1 / 1;</code>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-strip">
+                    <span class="info-icon">i</span>
+
+                    <p>
+                        <strong>Important:</strong>
+                        aspect-ratio defines a preferred width-to-height ratio.
+                        It does not automatically crop an image. Combine it with
+                        object-fit when you need the image to fill a frame.
+                    </p>
+                </div>
+            </section>
+
+            <!-- =========================================
+                 06. PRACTICAL PROJECT
+            ========================================== -->
+
+            <section id="practice" class="practice-section">
+                <div class="section-wrap">
+                    <div class="section-heading">
+                        <div class="section-kicker">
+                            <span>06</span>
+                            <span>PUT IT INTO PRACTICE</span>
+                        </div>
+
+                        <h2>
+                            Build a little
+                            <em>gallery.</em>
+                        </h2>
+
+                        <p>
+                            Bring together responsive images, object-fit and
+                            aspect ratios to create a clean image gallery.
+                        </p>
+                    </div>
+
+                    <div class="gallery-project">
+                        <div class="gallery-project-heading">
+                            <div>
+                                <span class="small-label">
+                                    YOUR NEXT MINI PROJECT
+                                </span>
+                                <h3>Visual Stories</h3>
+                            </div>
+
+                            <span class="project-number">PROJECT / 010</span>
+                        </div>
+
+                        <div class="sample-gallery">
+                            <article class="sample-gallery-item sample-large">
+                                <img
+                                    src="https://images.unsplash.com/photo-1470252649378-9c29740c9fa8?w=1000&q=85"
+                                    alt="Sunrise over a mountain landscape"
+                                />
+
+                                <div class="gallery-overlay">
+                                    <span>01 / LANDSCAPE</span>
+                                    <strong>Golden morning</strong>
+                                </div>
+                            </article>
+
+                            <article class="sample-gallery-item">
+                                <img
+                                    src="https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=600&q=85"
+                                    alt="Soft pink flowers"
+                                />
+
+                                <div class="gallery-overlay">
+                                    <span>02 / NATURE</span>
+                                    <strong>Soft details</strong>
+                                </div>
+                            </article>
+
+                            <article class="sample-gallery-item">
+                                <img
+                                    src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?w=600&q=85"
+                                    alt="Mountain lake with dramatic clouds"
+                                />
+
+                                <div class="gallery-overlay">
+                                    <span>03 / TRAVEL</span>
+                                    <strong>Open horizons</strong>
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="project-task">
+                            <div class="project-task-heading">
+                                <span class="small-label">YOUR CHALLENGE</span>
+                                <span class="task-count">04 TASKS</span>
+                            </div>
+
+                            <div class="task-list">
+                                <label class="task-item">
+                                    <input type="checkbox" />
+                                    <span class="custom-check"></span>
+                                    <span>
+                                        Create three image elements with useful
+                                        alt text.
+                                    </span>
+                                </label>
+
+                                <label class="task-item">
+                                    <input type="checkbox" />
+                                    <span class="custom-check"></span>
+                                    <span> Make all images responsive. </span>
+                                </label>
+
+                                <label class="task-item">
+                                    <input type="checkbox" />
+                                    <span class="custom-check"></span>
+                                    <span>
+                                        Use object-fit: cover for consistent
+                                        image frames.
+                                    </span>
+                                </label>
+
+                                <label class="task-item">
+                                    <input type="checkbox" />
+                                    <span class="custom-check"></span>
+                                    <span>
+                                        Use different aspect ratios to create
+                                        visual variety.
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- =========================================
+                 FINAL SUMMARY
+            ========================================== -->
+
+            <section class="summary-section section-wrap">
+                <div class="summary-content">
+                    <div class="section-kicker">
+                        <span>07</span>
+                        <span>LESSON COMPLETE</span>
+                    </div>
+
+                    <h2>
+                        Make every
+                        <em>image count.</em>
+                    </h2>
+
+                    <p>
+                        You now have the tools to display images that look good,
+                        adapt to different screens and fit your design.
+                    </p>
+
+                    <div class="summary-tags">
+                        <span>HTML IMG</span>
+                        <span>RESPONSIVE IMAGES</span>
+                        <span>OBJECT-FIT</span>
+                        <span>ASPECT-RATIO</span>
+                    </div>
+
+                    <a
+                        href="https://github.com/freetimezp/skillscheck-010-image"
+                        class="primary-button summary-button"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        Take the skill check
+                        <span aria-hidden="true">↗</span>
+                    </a>
+
+                    <p class="summary-footnote">
+                        Review what you've learned and test your knowledge.
+                    </p>
+                </div>
+
+                <div class="summary-decoration">
+                    <div class="summary-decoration-inner">
+                        <span>IMG</span>
+                        <strong>010</strong>
+                        <small>FRAME YOUR IDEAS</small>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- =========================================
+             FOOTER
+        ========================================== -->
+
+        <footer class="footer">
+            <div class="section-wrap footer-inner">
+                <a href="#top" class="footer-brand">
+                    <span class="brand-icon">S.</span>
+                    <span>STUDIO / FRONTEND SCHOOL</span>
+                </a>
+
+                <span class="footer-center"> LEARN · EXPERIMENT · CREATE </span>
+
+                <a
+                    href="https://freetimezp.github.io/roadmap-web-coding/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    BACK TO ROADMAP ↗
+                </a>
+            </div>
+        </footer>
+
+        <!-- JAVASCRIPT -->
+
+        <script src="./assets/js/main.js"></script>
+    </body>
 </html>
